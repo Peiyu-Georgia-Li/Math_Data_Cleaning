@@ -1,0 +1,24 @@
+name: pdf_processing
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pillow  # For PIL (used in read_pdf_with_ocr.py)
+  - pip
+  - pip:
+    - pix2text>=1.1.0  # Text/math formula extraction from images
+    - pymupdf>=1.23.0  # PDF processing (fitz module)
+    - requests>=2.31.0  # For API calls in clean_json_with_ai.py
+
+# System requirements:
+# - macOS
+# - Microsoft Word (for DOC to PDF conversion)
+# - Python 3.x
+
+# This file defines the dependencies needed to run:
+# - doc_to_pdf_converter.py (DOC to PDF conversion)
+# - read_pdf_with_ocr.py (PDF to text extraction with OCR)
+# - simple_parser.py (Text to structured JSON parsing)
+# - run_pdf_to_json_pipeline.py (Pipeline orchestration)
+# - clean_json_with_ai.py (JSON cleanup with AI assistance)
